@@ -67,6 +67,12 @@ then
     scripts/push_container_to_ACR.sh
 fi
 
+if ${USE_KEYVAULT}
+then
+    echo "Pushing Container to ACR"
+    scripts/create_role_assignment.sh
+fi
+
 if ${CREATE_DEPLOYMENT}
 then
     echo "Parsing Deployment Type: ${DEPLOYMENT_TYPE}"
