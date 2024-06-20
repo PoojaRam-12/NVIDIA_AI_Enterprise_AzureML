@@ -1,0 +1,4 @@
+FROM ngc_container_placeholder
+EXPOSE 8000
+ADD scripts/auxiliary_files/set_and_deploy_model.sh /tmp/set_and_deploy_model.sh
+CMD /tmp/set_and_deploy_model.sh
