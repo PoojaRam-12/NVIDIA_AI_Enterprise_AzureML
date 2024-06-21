@@ -55,6 +55,7 @@ sed -i "s/model_version_placeholder/${model_version}/g" scripts/auxiliary_files/
 sed -i "s/image_name_placeholder/${image_name}/g" scripts/auxiliary_files/actual_deployment_aml.yml
 sed -i "s/environment_version_placeholder/${environment_version}/g" scripts/auxiliary_files/actual_deployment_aml.yml
 sed -i "s/instance_type_placeholder/${instance_type}/g" scripts/auxiliary_files/actual_deployment_aml.yml
+sed -i "s/vault_name_placeholder/${keyvault_name}/g" scripts/auxiliary_files/actual_deployment_aml.yml
 cat scripts/auxiliary_files/actual_deployment_aml.yml
 echo "Creating Online Deployment ${deployment_name}"
 az ml online-deployment create -f scripts/auxiliary_files/actual_deployment_aml.yml
