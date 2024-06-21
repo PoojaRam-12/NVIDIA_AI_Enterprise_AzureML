@@ -26,7 +26,7 @@ resource_group="NVIDIA_COMPONENTS_AND_PIPELINES"
 workspace="NVIDIA_COMPONENTS_TEST7"
 location="southcentralus"
 
-ngc_key="azdwMG00YXNicWVzcnFrN3ZqMnFtcTAyb2U6NjhjY2QyNTgtOTIxNy00MDZjLTgxYTctYjkzNTFhMWI2YjBk"
+ngc_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 email_address="mreyesgomez@nvidia.com"
 
 acr_registry_name="81e14b41bf1147cc93fa28eaa94818c3"
