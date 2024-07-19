@@ -44,15 +44,15 @@ for i in "$@"; do
   esac
 done
 
-
-echo "Setting Credentials"
-scripts/set_credentials.sh
-
 echo "CREATE_KEYVAULT $CREATE_KEYVAULT"
+
 if ${CREATE_KEYVAULT}
 then
     echo "Creating Key vault"
     scripts/set_key_vault.sh
+else
+    echo "Set Credentials"
+    scripts/set_credentials.sh
 fi
 
 if ${CREATE_ENDPOINT}
@@ -69,7 +69,7 @@ fi
 
 if ${USE_KEYVAULT}
 then
-    echo "Create Role Assigment"
+    echo "Pushing Container to ACR"
     scripts/create_role_assignment.sh
 fi
 
