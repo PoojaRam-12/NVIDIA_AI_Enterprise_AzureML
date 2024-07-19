@@ -12,20 +12,23 @@ Specific details with respect to the Azure user credentials and about the Model/
 
 **User would need to edit all the ## User Credentials/Info entries**
 
+### acr_registry_name
 The value of the acr_registry_name entry is the default container registry corresponding to the Workspace being used 
 
 <img src="imgs/acr_registry.png" width="900">
 
 ### NGC Key
-The value of the ngc_key entry should be the one obtained by following [procedure](https://docs.nvidia.com/ngc/gpu-cloud/ngc-user-guide/index.html#generating-api-key)
+The value of the ngc_key entry should be the one obtained by following this [procedure](https://docs.nvidia.com/ngc/gpu-cloud/ngc-user-guide/index.html#generating-api-key)
 
-The NGC Key is needed because the NIM Container is going to download the required model directky from NGC and the key is necessary to identify the user
+The NGC Key is needed because the NIM Container is going to download the required model directly from NGC and the key is necessary to identify the user
 
 In this code we experimented passing the NGC Key to the deployment yml file using two methods
 
 * By directly placing the NGC Key from the config file into the deployment yml file
 * By first creating a Key Vault, passing the NGC Key from the config file as a secret to the vault and then passing the Key Vault secret value into the deployment yml file.
+
 This method is currently failing
+
 
 ## Main script deploy_nim_model.sh
 This script is the main driver of all the functionality
@@ -39,14 +42,40 @@ Running the main script with the following parameter
 
 Will push the given container into the provided workspace container registry
 
-The code would first pull the container from NGC and would prompt the user for its credentials to do so.
+The code will first pull the container from NGC and will prompt the user for its credentials to do so.
+
+If the run succeed the user should be able to find the provided container under the provided image name on the provided workspace container registry
+
+<img src="imgs/acr_image.png" width="900">
+
+### Create the endpoint with the provided name
+Running the main script with the following parameter
+
+<pre style="background-color:rgba(0, 0, 0, 0.0470588)"><font size="2">bash scripts/deploy_nim_model.sh --create_endpoint
+</pre>
+
+Will create an endpoint with the provided name under the provided workspace
+
+<img src="imgs/endpoint.png" width="900">
+
+### Create the deployment using the ACR Image and explicitly using the NGC Key on the Deployment yml file
+
+Running the main script with the following parameter
+
+<pre style="background-color:rgba(0, 0, 0, 0.0470588)"><font size="2">bash scripts/deploy_nim_model.sh --create_deployment --deployment_type="ACR"
+</pre>
+
+Will first replace the placeholders on template yml file:  scripts\auxiliary_file\deployment_acr_aml.yml with the values provided in the config file to generate the following yml file
+
+<img src="imgs/deployment_acr.png" width="900">
 
 
+The deployment should succeed and one should be able to locate it under the provided endpoint
 
-NVIDIA AI Enterprise is an end-to-end platform for building accelerated production AI.
 
-It includes a library of full-stack software including NVIDIA AI Workflows, frameworks, pretrained models and infrastructure optimization which streamline the development and deployment of production-ready applications for generative AI, speech AI, vision AI, cybersecurity, and more.
-It is comprised of several sdk.
+<img src="imgs/deployment1.png" width="900">
+<img src="imgs/deployment2.png" width="900">
+<img src="imgs/deployment3.png" width="900">
 
 
 

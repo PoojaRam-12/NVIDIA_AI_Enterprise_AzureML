@@ -2,7 +2,6 @@ $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.sch
 name: deployment_name_placeholder
 endpoint_name: endpoint_name_placeholder
 model: azureml://registries/registry_placeholder/models/model_name_placeholder/versions/model_version_placeholder
-model_mount_path: /triton-models
 environment_variables:
     NGC_KEY: ngc_key_placeholder
 environment: 
