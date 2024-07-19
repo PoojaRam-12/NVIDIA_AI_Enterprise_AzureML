@@ -58,9 +58,22 @@ Will create an endpoint with the provided name under the provided workspace
 
 <img src="imgs/endpoint.png" width="900">
 
+Now that the endpoint had been created the user can update the endpoint_id entry on the config file:
+scripts\config_file\deployment_config.sh
+
+By clicking on the provided resource group, filtering by Machine LEarning Online Endpoint, locating the endpoint and clicking on its link
+
+<img src="imgs/endpointid1.png" width="900">
+
+And then clicking on the Identity tab, one can find the endpoint id
+
+<img src="imgs/endpointid2.png" width="900">
+
+which should be entered on the config file
+
 ### Create the deployment using the ACR Image and explicitly using the NGC Key on the Deployment yml file
 
-Running the main script with the following parameter
+Running the main script with the following parameters
 
 <pre style="background-color:rgba(0, 0, 0, 0.0470588)"><font size="2">bash scripts/deploy_nim_model.sh --create_deployment --deployment_type="ACR"
 </pre>
@@ -69,15 +82,41 @@ Will first replace the placeholders on template yml file:  scripts\auxiliary_fil
 
 <img src="imgs/deployment_acr.png" width="900">
 
-
 The deployment should succeed and one should be able to locate it under the provided endpoint
-
 
 <img src="imgs/deployment1.png" width="900">
 <img src="imgs/deployment2.png" width="900">
 <img src="imgs/deployment3.png" width="900">
 
+### Create the deployment using the ACR Image, creating a Key Vault to store the NGC Key as a secret and then using on the Deployment yml file
+
+Running the main script with the following parameters
+
+<pre style="background-color:rgba(0, 0, 0, 0.0470588)"><font size="2">bash scripts/deploy_nim_model.sh --create_keyvault --use_keyvault --create_deploy
+ment --deployment_type="ACR"
+</pre>
+
+The code will first create a Key Vault with the specified name
+
+Then in would create a secret containing the NGC Key provided on the config file:
+
+<img src="imgs/secret.png" width="900">
+
+The code will then give the Key Vault Secrets User role to the Endpoint
+
+<img src="imgs/roleassignment.png" width="900">
+
+From the Azure Portal, one can confirm the Role was succesfully assigned
 
 
+<img src="imgs/roleassigmentval.png" width="900">
+
+Then the code will replace the placeholders on template yml file:  scripts\auxiliary_file\deployment_acr_aml.yml with the values provided in the config file to generate the following yml file:
+
+<img src="imgs/deployment_acr2.png" width="900">
+
+However the deployment fails
+
+<img src="imgs/deploymenterror.png" width="900">
 
 
