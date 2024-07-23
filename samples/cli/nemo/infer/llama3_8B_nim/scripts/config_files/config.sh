@@ -21,8 +21,8 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-subscription_id="ab221ca4-f098-422d-ab2f-5073b3851e68"
-resource_group="NVIDIA_COMPONENTS_AND_PIPELINES"
-workspace="NVIDIA_COMPONENTS_TEST7"
-compute_name="MyCompute"
+subscription_id="80c77c76-74ba-4c8c-8229-4c3b2957990c"
+resource_group="huggingface-registry-test1"
+workspace="test-eastus"
+compute_name="Standard-NC24s-v3"
 num_epochs="4"
