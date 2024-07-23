@@ -22,13 +22,13 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ##User Credentials/Info
-subscription_id="ab221ca4-f098-422d-ab2f-5073b3851e68"
-resource_group="NVIDIA_COMPONENTS_AND_PIPELINES"
-workspace="NVIDIA_COMPONENTS_TEST7"
-location="southcentralus"
-ngc_key="azdwMG00YXNicWVzcnFrN3ZqMnFtcTAyb2U6MDU0MDRjNTUtMGM3NC00YTQ5LWFlYjktNTkzNDRiYzUzOGM5"
-email_address="mreyesgomez@nvidia.com"
-acr_registry_name="81e14b41bf1147cc93fa28eaa94818c3"
+subscription_id="80c77c76-74ba-4c8c-8229-4c3b2957990c"
+resource_group="huggingface-registry-test1"
+workspace="test-eastus"
+location="eastus"
+ngc_key=""
+email_address="v-poojr@microsoft.com"
+acr_registry_name="52e6e75c08134c2590fc7e8ba6e37dc9"
 
 
 registry_name="NVIDIA-AI-Enterprise-Preview"
