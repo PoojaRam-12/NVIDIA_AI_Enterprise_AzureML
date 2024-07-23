@@ -1,7 +1,7 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
-name: deployment_name_placeholder
-endpoint_name: endpoint_name_placeholder
-model: azureml://registries/registry_placeholder/models/model_name_placeholder/versions/model_version_placeholder
+name: nvidia-llama3-8b-nim-dp
+endpoint_name: nvidia-llama3-8b-nim-ep
+model: azureml://registries/NVIDIA-AI-Enterprise-Preview/models/llama3-8b-instruct-nim_a100_1/versions/1
 environment_variables:
     NGC_KEY: ngc_key_placeholder
 environment: 
