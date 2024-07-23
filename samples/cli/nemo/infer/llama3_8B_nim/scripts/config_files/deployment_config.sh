@@ -32,12 +32,12 @@ acr_registry_name="52e6e75c08134c2590fc7e8ba6e37dc9"
 
 
 registry_name="NVIDIA-AI-Enterprise-Preview"
-keyvault_name="NGC-Credentials"
+keyvault_name="nvidia-llama3-8b-nim-kv"
 image_name=llama3_8b_nim_ncd
 ngc_container="nvcr.io/nim/meta/llama3-8b-instruct:1.0.0"
-endpoint_name="llama3-8b-nim-endpoint-aml-1"
-endpoint_id="cf824ba0-e479-4b04-a428-0e0d9d9aab3c"
-deployment_name="llama3-8b-nim-deployment-aml-1"
+endpoint_name="nvidia-llama3-8b-nim-ep"
+endpoint_id=""
+deployment_name="nvidia-llama3-8b-nim-dp"
 model_name="llama3-8b-instruct-nim_a100_1"
 model_version="1"
 instance_type="Standard_NC48ads_A100_v4"
