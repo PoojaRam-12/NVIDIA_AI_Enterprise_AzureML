@@ -26,7 +26,7 @@ subscription_id="80c77c76-74ba-4c8c-8229-4c3b2957990c"
 resource_group="huggingface-registry-test1"
 workspace="test-eastus"
 location="eastus"
-ngc_key=""
+ngc_key="Af9DCspC8p-07liOSYyIhm25Blx0DeExww-ppjzOLDIKt8ISQZO-hgD-cIvjJzQg"
 email_address="v-poojr@microsoft.com"
 acr_registry_name="52e6e75c08134c2590fc7e8ba6e37dc9"
 
